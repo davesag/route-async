@@ -13,13 +13,13 @@ A route wrapper allowing use of async / await syntax in Express route controller
 
 ## Wrap an `async` route
 
-Assuming you have some helper function called `somethingAsynchronous`, you might have a route looking a bit like this:
+Assuming you have some helper function called `someAsync`, you might have a route looking a bit like this:
 
-    const { asyncRoute } = require('route-async')
-    const somethingAsynchronous = require('./helpers/somethingAsynchronous')
+    const asyncRoute = require('route-async')
+    const someAsync = require('./helpers/someAsync')
 
     const myRoute = async (req, res) => {
-      const result = await somethingAsynchronous(req.body)
+      const result = await someAsync(req.body)
       res.json(result)
     }
 
@@ -29,42 +29,72 @@ The `asyncRoute` wrapper simply takes your route and wraps it, such that the asy
 
 ## Testing `async` routes
 
-Use the `mockAsyncRoute` wrapper to test your async routes.  The following example leverages [`mocha`](https://mochajs.org), [`sinon`](https://sinonjs.org), and [`proxyquire`](https://github.com/thlorenz/proxyquire) to unit test the above route.
+The following example leverages [`mocha`](https://mochajs.org), [`sinon`](https://sinonjs.org), and [`proxyquire`](https://github.com/thlorenz/proxyquire) to unit test the above route.
 
     const { expect } = require('chai')
     const sinon = require('sinon')
     const proxyquire = require('proxyquire')
 
-    const { mockAsyncRoute } = require('route-async')
-
     describe('src/routes/myRoute', () => {
-      const mockSomethingAsync = sinon.stub()
+      const mockSomeAsync = sinon.stub()
 
       const myRoute = proxyquire('../../src/routes/myRoute', {
-        'route-async': { mockAsyncRoute },
-        './helpers/somethingAsynchronous': mockSomethingAsync
+        './helpers/someAsync': mockSomeAsync
       }
 
       const req = { body: 'some body' }
       const res = { json: sinon.stub() }
       const next = sinon.spy()
-      const result = 'some result'
 
-      before(async () => {
-        mockSomethingAsync.resolves(result)
-        await myRoute(req, res, next)
+      const resetStubs = () => {
+        res.json.resetHistory()
+        next.resetHistory()
+      }
+
+      context('no errors', () => {
+        const result = 'some result'
+
+        before(async () => {
+          mockSomeAsync.resolves(result)
+          await myRoute(req, res, next)
+        })
+
+        after(resetStubs)
+
+        it('called someAsync with the right data', () => {
+          expect(mockSomeAsync).to.have.been.calledWith(req.body)
+        })
+
+        it('called res.json with the right data', () => {
+          expect(res.json).to.have.been.calledWith(result)
+        })
+
+        it("didn't call next", () => {
+          expect(next).not.to.have.been.called
+        })
       })
 
-      it('called somethingAsynchronous with the right data', () => {
-        expect(mockSomethingAsync).to.have.been.calledWith(req.body)
-      })
+      context('has errors', () => {
+        const error = 'some error'
 
-      it('called res.json with the right data', () => {
-        expect(res.json).to.have.been.calledWith(result)
-      })
+        before(async () => {
+          mockSomeAsync.rejects(error)
+          await myRoute(req, res, next)
+        })
 
-      it("didn't call next", () => {
-        expect(next).not.to.have.been.called
+        after(resetStubs)
+
+        it('called someAsync with the right data', () => {
+          expect(mockSomeAsync).to.have.been.calledWith(req.body)
+        })
+
+        it("didn't call res.json", () => {
+          expect(res.json).not.to.have.been.called
+        })
+
+        it('called next with the error', () => {
+          expect(next).to.have.been.calledWith(error)
+        })
       })
     })
 
