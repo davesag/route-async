@@ -2,10 +2,12 @@
 
 A route wrapper allowing use of async / await syntax in Express route controllers
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/davesag/route-async.svg)](https://greenkeeper.io/)
+
 | Branch   | Status  | Coverage  | Comments  |
 | -------- | ------- | --------- | --------- |
 | `develop` | [![CircleCI](https://circleci.com/gh/davesag/route-async/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/route-async/tree/develop) | [![codecov](https://codecov.io/gh/davesag/route-async/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/route-async) | Work in progress |
-| `master` | [![CircleCI](https://circleci.com/gh/davesag/route-async/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/route-async/tree/master) | [![codecov](https://codecov.io/gh/davesag/route-async/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/route-async) [![Greenkeeper badge](https://badges.greenkeeper.io/davesag/route-async.svg)](https://greenkeeper.io/) | Latest release |
+| `master` | [![CircleCI](https://circleci.com/gh/davesag/route-async/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/route-async/tree/master) | [![codecov](https://codecov.io/gh/davesag/route-async/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/route-async) | Latest release |
 
 ## To Use
 
