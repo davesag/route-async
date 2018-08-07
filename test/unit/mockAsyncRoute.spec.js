@@ -1,5 +1,4 @@
 const { expect } = require('chai')
-const sinon = require('sinon')
 
 const mockAsyncRoute = require('../../src/mockAsyncRoute')
 const doTest = require('./asyncRouteTests')
