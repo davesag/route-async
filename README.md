@@ -2,7 +2,8 @@
 
 A route wrapper allowing use of async / await syntax in Express route controllers
 
-|| Branch || Status || Coverage || Comments ||
+| Branch   | Status  | Coverage  | Comments  |
+| -------- | ------- | --------- | --------- |
 | `develop` | [![CircleCI](https://circleci.com/gh/davesag/route-async/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/route-async/tree/develop) | [![codecov](https://codecov.io/gh/davesag/route-async/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/route-async) | Work in progress |
 | `master` | [![CircleCI](https://circleci.com/gh/davesag/route-async/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/route-async/tree/master) | [![codecov](https://codecov.io/gh/davesag/route-async/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/route-async) | Latest release |
 
