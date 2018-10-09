@@ -1,6 +1,6 @@
 {
   "name": "route-async",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A route wrapper allowing use of async / await syntax in Express route controllers",
   "main": "src/index.js",
   "engines": {
