@@ -4,8 +4,13 @@
   "description": "A route wrapper allowing use of async / await syntax in Express route controllers",
   "main": "src/index.js",
   "engines": {
-    "node": ">8.12.0"
+    "node": ">= 7.10.1"
   },
+  "files": [
+    "/package*.json",
+    "/src",
+    "/CONTRIBUTING.md"
+  ],
   "scripts": {
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "lint": "eslint .",

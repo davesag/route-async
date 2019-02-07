@@ -1,5 +1,5 @@
 const { expect } = require('chai')
-const sinon = require('sinon')
+const { spy, stub } = require('sinon')
 
 const asyncRoute = require('../../src')
 
@@ -7,7 +7,7 @@ describe('src/asyncRoute', () => {
   let asyncFn
 
   context('when the route resolves', () => {
-    asyncFn = sinon.stub()
+    asyncFn = stub()
 
     before(async () => {
       asyncFn.resolves()
@@ -21,9 +21,9 @@ describe('src/asyncRoute', () => {
   })
 
   context('when the route throws an error', () => {
-    asyncFn = sinon.stub()
+    asyncFn = stub()
 
-    const errorHandler = sinon.spy()
+    const errorHandler = spy()
     const err = { message: 'oops' }
 
     before(async () => {
