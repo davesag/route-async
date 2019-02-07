@@ -9,13 +9,15 @@ A route wrapper allowing use of async / await syntax in Express route controller
 | `develop` | [![CircleCI](https://circleci.com/gh/davesag/route-async/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/route-async/tree/develop) | [![codecov](https://codecov.io/gh/davesag/route-async/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/route-async) | Work in progress |
 | `master` | [![CircleCI](https://circleci.com/gh/davesag/route-async/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/route-async/tree/master) | [![codecov](https://codecov.io/gh/davesag/route-async/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/route-async) | Latest release |
 
+[![NPM](https://nodei.co/npm/route-async.png?compact=true)](https://nodei.co/npm/route-async/)
+
 ## To Use
 
     npm install route-async
 
 ## Wrap an `async` route
 
-Assuming you have some helper function called `someAsync`, you might have a route looking a bit like this:
+Assuming you have some async helper function called `someAsync`, you might have a route looking a bit like this:
 
     const asyncRoute = require('route-async')
     const someAsync = require('./helpers/someAsync')
@@ -29,24 +31,30 @@ Assuming you have some helper function called `someAsync`, you might have a rout
 
 The `asyncRoute` wrapper simply takes your route and wraps it, such that the async promise is either resolved internally, or if rejected a `next` function is called. The default `next` is just `console.error` but you can of course supply your own.
 
+### What about if my route wants `next`
+
+Your route should not attempt to handle its own errors, but simply throw an `Error`, or even better an [`HttpError`](https://github.com/jshttp/http-errors) that gets caught by the `async-route` wrapper.
+
+This keeps your core route code much simpler.
+
 ## Testing `async` routes
 
 The following example leverages [`mocha`](https://mochajs.org), [`sinon`](https://sinonjs.org), and [`proxyquire`](https://github.com/thlorenz/proxyquire) to unit test the above route.
 
     const { expect } = require('chai')
-    const sinon = require('sinon')
+    const { spy, stub } = require('sinon')
     const proxyquire = require('proxyquire')
 
     describe('src/routes/myRoute', () => {
-      const mockSomeAsync = sinon.stub()
+      const mockSomeAsync = stub()
 
       const myRoute = proxyquire('../../src/routes/myRoute', {
         './helpers/someAsync': mockSomeAsync
       }
 
       const req = { body: 'some body' }
-      const res = { json: sinon.stub() }
-      const next = sinon.spy()
+      const res = { json: stub() }
+      const next = spy()
 
       const resetStubs = () => {
         res.json.resetHistory()
@@ -104,7 +112,7 @@ The following example leverages [`mocha`](https://mochajs.org), [`sinon`](https:
 
 ### Prerequisites
 
-* [NodeJS](htps://nodejs.org), version 10+ or better (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
+* [NodeJS](htps://nodejs.org), version 10.15.1 (LTS) or better (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
 
 ### Initialisation
 
