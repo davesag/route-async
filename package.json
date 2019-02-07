@@ -1,11 +1,16 @@
 {
   "name": "route-async",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A route wrapper allowing use of async / await syntax in Express route controllers",
   "main": "src/index.js",
   "engines": {
-    "node": ">8.12.0"
+    "node": ">= 7.10.1"
   },
+  "files": [
+    "/package*.json",
+    "/src",
+    "/CONTRIBUTING.md"
+  ],
   "scripts": {
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "lint": "eslint .",
@@ -55,22 +60,22 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "eslint": "^5.6.1",
-    "eslint-config-prettier": "^3.1.0",
+    "eslint": "^5.13.0",
+    "eslint-config-prettier": "^3.6.0",
     "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-mocha": "^5.2.0",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-mocha": "^5.2.1",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "husky": "^1.1.1",
-    "lint-staged": "^7.3.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.3",
     "mocha": "^5.2.0",
-    "nyc": "^13.0.1",
-    "prettier": "^1.14.3",
-    "sinon": "^6.3.5",
-    "sinon-chai": "^3.2.0"
+    "nyc": "^13.2.0",
+    "prettier": "^1.16.4",
+    "sinon": "^7.2.3",
+    "sinon-chai": "^3.3.0"
   },
   "husky": {
     "hooks": {
