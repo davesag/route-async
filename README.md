@@ -123,7 +123,9 @@ describe('src/routes/myRoute', () => {
 
 ### Initialisation
 
-    npm install
+```
+npm install
+```
 
 ### Test it
 
