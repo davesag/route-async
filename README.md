@@ -14,7 +14,7 @@ A route wrapper allowing use of `async` / `await` syntax in Express route contro
 
 ## To Use
 
-```
+```sh
 npm install route-async
 ```
 
@@ -22,7 +22,7 @@ npm install route-async
 
 Assuming you have some async helper function called `someAsync`, you might have a route looking a bit like this:
 
-```
+```js
 const asyncRoute = require('route-async')
 const someAsync = require('./helpers/someAsync')
 
@@ -46,7 +46,7 @@ This keeps your core route code much simpler.
 
 The following example leverages [`mocha`](https://mochajs.org), [`sinon`](https://sinonjs.org), and [`proxyquire`](https://github.com/thlorenz/proxyquire) to unit test the above route.
 
-```
+```js
 const { expect } = require('chai')
 const { spy, stub } = require('sinon')
 const proxyquire = require('proxyquire')
@@ -123,7 +123,7 @@ describe('src/routes/myRoute', () => {
 
 ### Initialisation
 
-```
+```sh
 npm install
 ```
 
@@ -131,10 +131,11 @@ npm install
 
 - `npm test` — runs the unit tests
 - `npm run test:coverage` — runs the tests with code coverage output.
+- `npm run test:mutants` — runs the mutation tests
 
 ### Lint it
 
-```
+```sh
 npm run lint
 ```
 
