@@ -14,7 +14,7 @@ A route wrapper allowing use of `async` / `await` syntax in Express route contro
 
 ## To Use
 
-```
+```sh
 npm install route-async
 ```
 
@@ -22,7 +22,7 @@ npm install route-async
 
 Assuming you have some async helper function called `someAsync`, you might have a route looking a bit like this:
 
-```
+```js
 const asyncRoute = require('route-async')
 const someAsync = require('./helpers/someAsync')
 
@@ -34,7 +34,7 @@ const myRoute = async (req, res) => {
 module.exports = asyncRoute(myRoute)
 ```
 
-The `asyncRoute` wrapper simply takes your route and wraps it, such that the `async` promise is either resolved internally, or if rejected a `next` function is called. The default `next` is just `console.error` but you can of course supply your own.
+The `asyncRoute` wrapper simply takes your route and wraps it, such that the `async` promise is either resolved internally, or if rejected a `next` function is called. The default `next` is just `console.error` and you can supply your own.
 
 ### What about if my route wants `next`
 
@@ -44,9 +44,9 @@ This keeps your core route code much simpler.
 
 ## Testing `async` routes
 
-The following example leverages [`mocha`](https://mochajs.org), [`sinon`](https://sinonjs.org), and [`proxyquire`](https://github.com/thlorenz/proxyquire) to unit test the above route.
+The following example leverages [`mocha`](https://mochajs.org), [`sinon`](https://sinonjs.org), and [`proxyquire`](https://github.com/thlorenz/proxyquire) to unit test the above route by supplying a `spy` in the place of the `next` function.
 
-```
+```js
 const { expect } = require('chai')
 const { spy, stub } = require('sinon')
 const proxyquire = require('proxyquire')
@@ -123,7 +123,7 @@ describe('src/routes/myRoute', () => {
 
 ### Initialisation
 
-```
+```sh
 npm install
 ```
 
@@ -131,10 +131,11 @@ npm install
 
 - `npm test` — runs the unit tests
 - `npm run test:coverage` — runs the tests with code coverage output.
+- `npm run test:mutants` — runs the mutation tests
 
 ### Lint it
 
-```
+```sh
 npm run lint
 ```
 
