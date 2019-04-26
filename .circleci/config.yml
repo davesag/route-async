@@ -43,7 +43,7 @@ jobs:
 
       - run:
           name: Unit Tests with Code Coverage
-          command: npm run test:coverage
+          command: npm run test:unit:cov
 
       - run:
           name: Mutation Tests

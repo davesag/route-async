@@ -130,7 +130,7 @@ npm install
 ### Test it
 
 - `npm test` — runs the unit tests
-- `npm run test:coverage` — runs the tests with code coverage output.
+- `npm run test:unit:cov` — runs the tests with code coverage output.
 - `npm run test:mutants` — runs the mutation tests
 
 ### Lint it
