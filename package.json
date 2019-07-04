@@ -1,7 +1,7 @@
 {
   "name": "route-async",
   "version": "1.0.4",
-  "description": "A route wrapper allowing use of async / await syntax in Express route controllers",
+  "description": "A route-wrapper allowing use of async / await syntax in Express route controllers",
   "main": "src/index.js",
   "engines": {
     "node": ">= 7.10.1"
