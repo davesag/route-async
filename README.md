@@ -111,6 +111,8 @@ describe('src/routes/myRoute', () => {
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/davesag/route-async.svg)](https://greenkeeper.io/)
 
+### Branches
+
 <!-- prettier-ignore -->
 | Branch   | Status  | Coverage  | Comments  |
 | -------- | ------- | --------- | --------- |
