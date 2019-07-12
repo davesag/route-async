@@ -1,14 +1,6 @@
 # route-async
 
-A route wrapper allowing use of `async` / `await` syntax in Express route controllers
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/davesag/route-async.svg)](https://greenkeeper.io/)
-
-<!-- prettier-ignore -->
-| Branch   | Status  | Coverage  | Comments  |
-| -------- | ------- | --------- | --------- |
-| `develop` | [![CircleCI](https://circleci.com/gh/davesag/route-async/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/route-async/tree/develop) | [![codecov](https://codecov.io/gh/davesag/route-async/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/route-async) | Work in progress |
-| `master` | [![CircleCI](https://circleci.com/gh/davesag/route-async/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/route-async/tree/master) | [![codecov](https://codecov.io/gh/davesag/route-async/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/route-async) | Latest release |
+A route-wrapper allowing use of `async` / `await` syntax in [`Express`](https://expressjs.com) route controllers.
 
 [![NPM](https://nodei.co/npm/route-async.png?compact=true)](https://nodei.co/npm/route-async/)
 
@@ -56,7 +48,7 @@ describe('src/routes/myRoute', () => {
 
   const myRoute = proxyquire('../../src/routes/myRoute', {
     './helpers/someAsync': mockSomeAsync
-  }
+  })
 
   const req = { body: 'some body' }
   const res = { json: stub() }
@@ -117,9 +109,19 @@ describe('src/routes/myRoute', () => {
 
 ## Development
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/davesag/route-async.svg)](https://greenkeeper.io/)
+
+### Branches
+
+<!-- prettier-ignore -->
+| Branch   | Status  | Coverage  | Comments  |
+| -------- | ------- | --------- | --------- |
+| `develop` | [![CircleCI](https://circleci.com/gh/davesag/route-async/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/route-async/tree/develop) | [![codecov](https://codecov.io/gh/davesag/route-async/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/route-async) | Work in progress |
+| `master` | [![CircleCI](https://circleci.com/gh/davesag/route-async/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/route-async/tree/master) | [![codecov](https://codecov.io/gh/davesag/route-async/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/route-async) | Latest release |
+
 ### Prerequisites
 
-- [NodeJS](htps://nodejs.org), version 10.15.3 (LTS) or better (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
+- [NodeJS](htps://nodejs.org), version 10.16.0 (LTS) or better (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
 
 ### Initialisation
 
@@ -130,7 +132,7 @@ npm install
 ### Test it
 
 - `npm test` — runs the unit tests
-- `npm run test:coverage` — runs the tests with code coverage output.
+- `npm run test:unit:cov` — runs the tests with code coverage output.
 - `npm run test:mutants` — runs the mutation tests
 
 ### Lint it
