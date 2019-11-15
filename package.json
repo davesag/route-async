@@ -2,15 +2,25 @@
   "name": "route-async",
   "version": "1.0.5",
   "description": "A route-wrapper allowing use of async / await syntax in Express route controllers",
+  "author": "Dave Sag <davesag@gmail.com>",
+  "type": "commonjs",
+  "license": "MIT",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/davesag"
+  },
   "main": "src/index.js",
   "engines": {
     "node": ">= 7.10.1"
   },
   "files": [
-    "/package*.json",
-    "/src",
-    "/CONTRIBUTING.md"
+    "src",
+    "CONTRIBUTING.md"
   ],
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
   "scripts": {
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "lint": "eslint .",
@@ -25,45 +35,14 @@
     "async-await",
     "express"
   ],
-  "author": "Dave Sag <davesag@gmail.com>",
-  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davesag/route-async.git"
+    "url": "https://github.com/davesag/route-async.git"
   },
   "bugs": {
     "url": "https://github.com/davesag/route-async/issues"
   },
   "homepage": "https://github.com/davesag/route-async#readme",
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "proseWrap": "never"
-  },
-  "lint-staged": {
-    "**/*.{js,json,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "nyc": {
-    "check-coverage": true,
-    "per-file": true,
-    "lines": 100,
-    "statements": 100,
-    "functions": 100,
-    "branches": 100,
-    "include": [
-      "src/**/*.js"
-    ],
-    "exclude": [],
-    "reporter": [
-      "lcov",
-      "text"
-    ],
-    "all": true,
-    "cache": true
-  },
   "devDependencies": {
     "@stryker-mutator/core": "^2.3.0",
     "@stryker-mutator/javascript-mutator": "^2.3.0",
@@ -88,9 +67,38 @@
     "sinon": "^7.5.0",
     "sinon-chai": "^3.3.0"
   },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "proseWrap": "never"
+  },
+  "lint-staged": {
+    "**/*.{js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "all": true,
+    "cache": true
   }
 }
