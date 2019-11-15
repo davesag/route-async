@@ -121,7 +121,7 @@ describe('src/routes/myRoute', () => {
 
 ### Prerequisites
 
-- [NodeJS](htps://nodejs.org), version 10.16.0 (LTS) or better (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
+- [NodeJS](htps://nodejs.org), version 10.16.3 (LTS) or better (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
 
 ### Initialisation
 
