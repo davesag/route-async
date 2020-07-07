@@ -109,19 +109,17 @@ describe('src/routes/myRoute', () => {
 
 ## Development
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/davesag/route-async.svg)](https://greenkeeper.io/)
-
 ### Branches
 
 <!-- prettier-ignore -->
-| Branch   | Status  | Coverage  | Comments  |
-| -------- | ------- | --------- | --------- |
-| `develop` | [![CircleCI](https://circleci.com/gh/davesag/route-async/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/route-async/tree/develop) | [![codecov](https://codecov.io/gh/davesag/route-async/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/route-async) | Work in progress |
-| `master` | [![CircleCI](https://circleci.com/gh/davesag/route-async/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/route-async/tree/master) | [![codecov](https://codecov.io/gh/davesag/route-async/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/route-async) | Latest release |
+| Branch   | Status  | Coverage  | Audit | Comments  |
+| -------- | ------- | --------- | ----- | --------- |
+| `develop` | [![CircleCI](https://circleci.com/gh/davesag/route-async/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/route-async/tree/develop) | [![codecov](https://codecov.io/gh/davesag/route-async/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/route-async) | [![Vulnerabilities](https://snyk.io/test/github/davesag/route-async/develop/badge.svg)](https://snyk.io/test/github/davesag/route-async/develop) | Work in progress |
+| `master` | [![CircleCI](https://circleci.com/gh/davesag/route-async/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/route-async/tree/master) | [![codecov](https://codecov.io/gh/davesag/route-async/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/route-async) | [![Vulnerabilities](https://snyk.io/test/github/davesag/route-async/master/badge.svg)](https://snyk.io/test/github/davesag/route-async/master) | Latest release |
 
 ### Prerequisites
 
-- [NodeJS](htps://nodejs.org), version 10.16.3 (LTS) or better (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
+- [NodeJS](htps://nodejs.org), version 12.18.2 (LTS) or better (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
 
 ### Initialisation
 
