@@ -11,7 +11,8 @@
   },
   "main": "src/index.js",
   "engines": {
-    "node": ">= 7.10.1"
+    "node": ">= 7.10.1 < 15.x",
+    "npm": ">= 6.5.0 < 7.x"
   },
   "files": [
     "src",
