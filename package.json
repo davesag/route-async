@@ -11,8 +11,8 @@
   },
   "main": "src/index.js",
   "engines": {
-    "node": ">= 7.10.1 < 15.x",
-    "npm": ">= 6.5.0 < 7.x"
+    "node": ">= 7.10.1",
+    "npm": "<7 >=7.0.8"
   },
   "files": [
     "src",
@@ -29,7 +29,6 @@
     "test": "npm run test:unit",
     "test:unit": "NODE_ENV=test mocha ./test/unit/ --require ./test/unitTestHelper.js --recursive",
     "test:unit:cov": "NODE_ENV=test nyc mocha ./test/unit/ --require ./test/unitTestHelper.js --recursive",
-    "test:mutants": "NODE_ENV=test npx stryker run",
     "snyk-protect": "snyk protect"
   },
   "keywords": [
@@ -46,8 +45,6 @@
   },
   "homepage": "https://github.com/davesag/route-async#readme",
   "devDependencies": {
-    "@stryker-mutator/core": "^4.0.0",
-    "@stryker-mutator/mocha-runner": "^4.0.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "eslint": "^7.11.0",
