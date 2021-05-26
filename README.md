@@ -115,7 +115,7 @@ describe('src/routes/myRoute', () => {
 | Branch   | Status  | Coverage  | Audit | Comments  |
 | -------- | ------- | --------- | ----- | --------- |
 | `develop` | [![CircleCI](https://circleci.com/gh/davesag/route-async/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/route-async/tree/develop) | [![codecov](https://codecov.io/gh/davesag/route-async/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/route-async) | [![Vulnerabilities](https://snyk.io/test/github/davesag/route-async/develop/badge.svg)](https://snyk.io/test/github/davesag/route-async/develop) | Work in progress |
-| `master` | [![CircleCI](https://circleci.com/gh/davesag/route-async/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/route-async/tree/master) | [![codecov](https://codecov.io/gh/davesag/route-async/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/route-async) | [![Vulnerabilities](https://snyk.io/test/github/davesag/route-async/master/badge.svg)](https://snyk.io/test/github/davesag/route-async/master) | Latest release |
+| `main` | [![CircleCI](https://circleci.com/gh/davesag/route-async/tree/main.svg?style=svg)](https://circleci.com/gh/davesag/route-async/tree/main) | [![codecov](https://codecov.io/gh/davesag/route-async/branch/main/graph/badge.svg)](https://codecov.io/gh/davesag/route-async) | [![Vulnerabilities](https://snyk.io/test/github/davesag/route-async/main/badge.svg)](https://snyk.io/test/github/davesag/route-async/main) | Latest release |
 
 ### Prerequisites
 
