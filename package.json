@@ -1,6 +1,6 @@
 {
   "name": "route-async",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A route-wrapper allowing use of async / await syntax in Express route controllers",
   "author": "Dave Sag <davesag@gmail.com>",
   "type": "commonjs",
@@ -22,13 +22,13 @@
     "test": "test"
   },
   "scripts": {
-    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "eslint-check": "eslint --print-config src/index.js | eslint-config-prettier-check",
     "lint": "eslint .",
     "prettier": "prettier --write '**/*.{js,json,md}'",
     "test": "npm run test:unit",
     "test:unit": "NODE_ENV=test mocha ./test/unit/ --require ./test/unitTestHelper.js --recursive",
     "test:unit:cov": "NODE_ENV=test nyc mocha ./test/unit/ --require ./test/unitTestHelper.js --recursive",
-    "test:mutants": "NODE_ENV=test npx stryker run"
+    "snyk-protect": "snyk protect"
   },
   "keywords": [
     "async",
@@ -44,44 +44,37 @@
   },
   "homepage": "https://github.com/davesag/route-async#readme",
   "devDependencies": {
-    "@stryker-mutator/core": "^2.4.0",
-    "@stryker-mutator/javascript-mutator": "^2.4.0",
-    "@stryker-mutator/mocha-framework": "^2.4.0",
-    "@stryker-mutator/mocha-runner": "^2.4.0",
-    "chai": "^4.2.0",
+    "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.8.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.19.1",
-    "eslint-plugin-mocha": "^6.2.2",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "husky": "^3.1.0",
-    "lint-staged": "^9.5.0",
-    "mocha": "^6.2.2",
-    "nyc": "^15.0.0",
-    "prettier": "^1.19.1",
-    "sinon": "^8.0.1",
-    "sinon-chai": "^3.4.0"
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-mocha": "^10.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.7.1",
+    "sinon": "^14.0.0",
+    "sinon-chai": "^3.5.0",
+    "snyk": "^1.981.0"
   },
   "prettier": {
     "semi": false,
     "singleQuote": true,
-    "proseWrap": "never"
+    "proseWrap": "never",
+    "arrowParens": "avoid",
+    "trailingComma": "none",
+    "printWidth": 100
   },
   "lint-staged": {
     "**/*.{js,json,md}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "nyc": {
     "check-coverage": true,
@@ -100,5 +93,6 @@
     ],
     "all": true,
     "cache": true
-  }
+  },
+  "snyk": true
 }
